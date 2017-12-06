@@ -28,15 +28,29 @@
 </head>
 <body>
 	<h1 class="center">ITMD-361 - Lab 7 - Basic JavaScript Event Handling and DOM</h1>
-	<h2 class="center">Your Name Here</h2>
-	<h3 class="center">Your IIT email here</h3>
+	<h2 class="center">Neil Thakkar</h2>
+	<h3 class="center">nthakkar1@hawk.iit.edu</h3>
 	<div id="container">
 		<input id="entryinput" type="text" name="textentry" placeholder="Enter a Message">
 		<div id="entrybutton">Alert Me</div>
 		<h2 id="textoutput" class="center">Show results here</h2>
 	</div>
 	<script type="text/javascript">
-		
-	</script>
+    //Declare variables for button and text output
+    var alertButton = document.getElementById("entrybutton");
+    var textoutput = document.getElementById("textoutput");
+    
+    //add event listener for button click
+    alertButton.addEventListener("click", fireAlert);
+    
+    function fireAlert() {
+      //need to reference value of input box after the button is clicked otherwise the value is empty
+      var inputBox = document.getElementById("entryinput").value;
+      
+      alert("Neil Thakkar: " + inputBox);
+      textoutput.innerHTML = inputBox;
+      
+    }      
+  </script>
 </body>
 </html>
